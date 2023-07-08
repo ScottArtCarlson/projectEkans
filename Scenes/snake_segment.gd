@@ -24,7 +24,7 @@ var deceleration = 15
 
 # ready runs once when the scene is first instanciated
 func _ready():
-	#Count the number of snake bits for later	
+	# count the number of snake bits for later	
 	if get_parent().get_child_count() == 1:
 		pass
 	else:
@@ -46,8 +46,8 @@ func _physics_process(_delta):
 		# if target is to close, stop moving
 		if to_target < followOffset:
 			return	
-		
-		#else, move towards target at speed
+
+		# else, move towards target at speed
 		velocity = position.direction_to(target.global_position) * SPEED
 		move_and_slide()
 		# by sending it the velocity, it tells the animation blend space which animation direction to pull
@@ -65,5 +65,5 @@ func update_animation_parameters(move_input : Vector2):
 
 # checks to see if the snake hit itself, working but needs win condition code
 func _on_snake_hurt_box_area_entered(area):
-	pass
+	Events.level_completed.emit()
 #	print("Hurt - self collision")

@@ -37,6 +37,9 @@ func handleInput():
 	var action = Input.is_action_just_pressed("action")
 	if action:
 		handleAction()
+		
+	var pause = Input.is_action_just_pressed("pause")
+	
 
 # main physics loop, handles input, movement, and wrapping. delta is underscored if it is not used, oterwise an error is thrown
 func _physics_process(_delta):

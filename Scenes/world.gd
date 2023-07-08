@@ -1,13 +1,17 @@
 extends Node2D
 
-
+@onready var level_completed = $CanvasLayer/LevelCompleted
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	Events.level_completed.connect(show_level_completed)
+	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	pass
+
+func show_level_completed():
+	level_completed.show()
+#	get_tree().paused = true
 
 # custom signal from the player scene
 func _on_player_player_killed():

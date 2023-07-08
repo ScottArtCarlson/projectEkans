@@ -1,15 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://buvirnbmvpjmq"]
+[gd_scene load_steps=6 format=3 uid="uid://buvirnbmvpjmq"]
 
 [ext_resource type="PackedScene" uid="uid://bycq58j37i46q" path="res://Scenes/player.tscn" id="1_pdc8r"]
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_pepnt"]
 [ext_resource type="PackedScene" uid="uid://cexq5kww3hohm" path="res://Scenes/snake.tscn" id="2_1pave"]
 [ext_resource type="PackedScene" uid="uid://crawbr77u2yx0" path="res://Scenes/snake_segment.tscn" id="4_iyujy"]
+[ext_resource type="PackedScene" uid="uid://cy2eyhxfkjif7" path="res://Scenes/level_completed.tscn" id="5_qe0tg"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_pepnt")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_pdc8r")]
-position = Vector2(176, 78)
+position = Vector2(-112, 208)
 
 [node name="SnakeContainer" type="Node" parent="."]
 
@@ -20,33 +21,12 @@ position = Vector2(320, 256)
 position = Vector2(424, 296)
 
 [node name="SnakeSegment2" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
+position = Vector2(520, 328)
 
-[node name="SnakeSegment3" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="SnakeSegment4" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
-
-[node name="SnakeSegment5" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
-
-[node name="SnakeSegment6" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
-
-[node name="SnakeSegment7" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
-
-[node name="SnakeSegment8" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
-
-[node name="SnakeSegment9" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
-
-[node name="SnakeSegment10" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
-
-[node name="SnakeSegment11" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
+[node name="LevelCompleted" parent="CanvasLayer" instance=ExtResource("5_qe0tg")]
+visible = false
+metadata/_edit_use_anchors_ = true
 
 [connection signal="player_killed" from="Player" to="." method="_on_player_player_killed"]
