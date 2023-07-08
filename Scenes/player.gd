@@ -15,6 +15,7 @@ signal player_killed
 # players speed, export so that it is editable in the menu
 @export var SPEED = 150.0
 @export var starting_position : Vector2 = Vector2(0, 1)
+var i_frame = 200
 
 func _ready():
 	# sets the starting position of the animation
@@ -43,7 +44,9 @@ func _physics_process(_delta):
 	move_and_slide()
 	# checks each frame if it needs to change to the next animation
 	pick_new_state()
-	screen_wrap()
+#	screen_wrap()
+	if i_frame > 0:
+		i_frame -= 1
 
 # no use yet
 func handleAction():
@@ -78,4 +81,8 @@ func pick_new_state():
 
 func _on_hurt_box_area_entered(area):
 	global_position = starting_position
-	player_killed.emit()
+	if i_frame > 0:
+		return
+	else:
+		i_frame = 200
+		player_killed.emit()

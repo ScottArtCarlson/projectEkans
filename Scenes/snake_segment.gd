@@ -11,9 +11,9 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 # Snake movement speed, as export so that is can be edited in the editor
-@export var SPEED = 100
+@export var SPEED = 150
 # buffer between the snake bits so that they dint stack up, in pixels
-@export var followOffset = 70
+@export var followOffset = 90
 # starting direction for animation
 @export var starting_position : Vector2 = Vector2(0, 1)
 
@@ -67,5 +67,3 @@ func update_animation_parameters(move_input : Vector2):
 func _on_snake_hurt_box_area_entered(area):
 	pass
 #	print("Hurt - self collision")
-
-

@@ -1,10 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://buvirnbmvpjmq"]
+[gd_scene load_steps=5 format=3 uid="uid://buvirnbmvpjmq"]
 
 [ext_resource type="PackedScene" uid="uid://bycq58j37i46q" path="res://Scenes/player.tscn" id="1_pdc8r"]
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_pepnt"]
 [ext_resource type="PackedScene" uid="uid://cexq5kww3hohm" path="res://Scenes/snake.tscn" id="2_1pave"]
 [ext_resource type="PackedScene" uid="uid://crawbr77u2yx0" path="res://Scenes/snake_segment.tscn" id="4_iyujy"]
-[ext_resource type="PackedScene" uid="uid://bs3toeytq71bv" path="res://Scenes/wall.tscn" id="5_ttoa8"]
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_pepnt")
@@ -24,24 +23,30 @@ position = Vector2(424, 296)
 position = Vector2(424, 296)
 
 [node name="SnakeSegment3" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(528, 224)
+position = Vector2(424, 296)
 
 [node name="SnakeSegment4" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(536, 288)
+position = Vector2(424, 296)
 
-[node name="Wall" parent="." instance=ExtResource("5_ttoa8")]
+[node name="SnakeSegment5" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
+position = Vector2(424, 296)
 
-[node name="Wall2" parent="." instance=ExtResource("5_ttoa8")]
-position = Vector2(656, 0)
+[node name="SnakeSegment6" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
+position = Vector2(424, 296)
 
-[node name="Wall3" parent="." instance=ExtResource("5_ttoa8")]
-position = Vector2(-16, -16)
-rotation = -1.57079
-scale = Vector2(0.962738, 1.86676)
+[node name="SnakeSegment7" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
+position = Vector2(424, 296)
 
-[node name="Wall4" parent="." instance=ExtResource("5_ttoa8")]
-position = Vector2(-16, 360)
-rotation = -1.57079
-scale = Vector2(0.962738, 1.86676)
+[node name="SnakeSegment8" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
+position = Vector2(424, 296)
+
+[node name="SnakeSegment9" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
+position = Vector2(424, 296)
+
+[node name="SnakeSegment10" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
+position = Vector2(424, 296)
+
+[node name="SnakeSegment11" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
+position = Vector2(424, 296)
 
 [connection signal="player_killed" from="Player" to="." method="_on_player_player_killed"]
