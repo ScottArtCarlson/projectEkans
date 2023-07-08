@@ -10,10 +10,12 @@ extends CharacterBody2D
 # set the player back to the top left corner after death
 @onready var respawn_position = global_position
 
+# sets up a new signal that we will emit later, when the player is hit by a snake
 signal player_killed
 
 # players speed, export so that it is editable in the menu
 @export var SPEED = 150.0
+# starting position 
 @export var starting_position : Vector2 = Vector2(0, 1)
 var i_frame = 200
 

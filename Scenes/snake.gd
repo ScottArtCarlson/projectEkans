@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 # Snake speed
-@export var SPEED = 141.0
+@export var SPEED = 300.0
 # unused currently
 @export var startingNodes = 3
 # starting direction for animation
