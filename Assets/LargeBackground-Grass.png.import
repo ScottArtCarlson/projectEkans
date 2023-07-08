@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://co72sckos8b5y"
-path="res://.godot/imported/bigForest.png-4a643df9a382e8a527688672b90d9de2.ctex"
+uid="uid://bbdojwwhcwb1t"
+path="res://.godot/imported/LargeBackground-Grass.png-a4949682786fbf83f5ea8330ed839415.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/bigForest.png"
-dest_files=["res://.godot/imported/bigForest.png-4a643df9a382e8a527688672b90d9de2.ctex"]
+source_file="res://Assets/LargeBackground-Grass.png"
+dest_files=["res://.godot/imported/LargeBackground-Grass.png-a4949682786fbf83f5ea8330ed839415.ctex"]
 
 [params]
 

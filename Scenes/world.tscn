@@ -1,11 +1,12 @@
-[gd_scene load_steps=10 format=3 uid="uid://buvirnbmvpjmq"]
+[gd_scene load_steps=11 format=3 uid="uid://buvirnbmvpjmq"]
 
 [ext_resource type="PackedScene" uid="uid://bycq58j37i46q" path="res://Scenes/player.tscn" id="1_pdc8r"]
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_pepnt"]
 [ext_resource type="PackedScene" uid="uid://cexq5kww3hohm" path="res://Scenes/snake.tscn" id="2_1pave"]
 [ext_resource type="PackedScene" uid="uid://crawbr77u2yx0" path="res://Scenes/snake_segment.tscn" id="4_iyujy"]
-[ext_resource type="PackedScene" path="res://Scenes/level_completed.tscn" id="5_qe0tg"]
-[ext_resource type="Texture2D" uid="uid://co72sckos8b5y" path="res://Scenes/bigForest.png" id="6_digkb"]
+[ext_resource type="PackedScene" uid="uid://cy2eyhxfkjif7" path="res://Scenes/level_completed.tscn" id="5_qe0tg"]
+[ext_resource type="Texture2D" uid="uid://bbdojwwhcwb1t" path="res://Assets/LargeBackground-Grass.png" id="6_6aap7"]
+[ext_resource type="Texture2D" uid="uid://dngtxx6scqt58" path="res://Assets/LargeBackground-Clouds.png" id="7_g61yn"]
 
 [sub_resource type="Animation" id="Animation_yj4fx"]
 resource_name = "Count Down"
@@ -116,12 +117,21 @@ text = "Start in: 3"
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+[node name="ParallaxLayerGrass" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 texture_repeat = 3
-motion_mirroring = Vector2(1540, 1220)
+motion_mirroring = Vector2(2000, 2000)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
-texture = ExtResource("6_digkb")
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayerGrass"]
+texture = ExtResource("6_6aap7")
+centered = false
+
+[node name="ParallaxLayerClouds" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+texture_repeat = 3
+motion_scale = Vector2(1.5, 1.5)
+motion_mirroring = Vector2(2000, 2000)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayerClouds"]
+texture = ExtResource("7_g61yn")
 centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
