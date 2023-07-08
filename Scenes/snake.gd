@@ -15,21 +15,24 @@ extends CharacterBody2D
 # starting direction for animation
 @export var starting_position : Vector2 = Vector2(0, 1)
 
+@export var angular_easing = 1.0
+
+var angle = 0.0
+var angular_speed = 0.0
+
 func _ready():
 	update_animation_parameters(starting_position)
 	state_machine.travel("Drive_Head")
 
-func _physics_process(_delta):
+func _physics_process(delta):
+
 	if target != null:
 		velocity = position.direction_to(target.position) * SPEED
 		move_and_slide()
-		
-		update_animation_parameters(velocity)
-	
+
+		update_animation_parameters(velocity)	
 	# checks each frame if it needs to change to the next animation
 	state_machine.travel("Drive_Head")
-	# nothing yet
-#	addSnakeSegment()
 
 # no function yet, I want it to add a new snake segment to the snake container when pressed/when ate
 func addSnakeSegment():
@@ -42,5 +45,4 @@ func update_animation_parameters(move_input : Vector2):
 		animation_tree.set("parameters/Drive_Head/blend_position", move_input)
 
 func _on_snake_hurt_box_area_entered(area):
-	pass
-#	print("Hurt - self collision")
+	print("Hurt - self collision")

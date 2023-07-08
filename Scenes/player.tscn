@@ -251,7 +251,7 @@ states/Idle/node = SubResource("AnimationNodeBlendSpace2D_s4ivx")
 states/Idle/position = Vector2(336, 96)
 states/Start/position = Vector2(186, 96)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_c088t"), "Idle", "Bike", SubResource("AnimationNodeStateMachineTransition_2rlao"), "Bike", "Idle", SubResource("AnimationNodeStateMachineTransition_0e6s7")]
-graph_offset = Vector2(-520, -11)
+graph_offset = Vector2(-700, -99)
 
 [node name="Player" type="CharacterBody2D"]
 y_sort_enabled = true
@@ -275,8 +275,8 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_lmrx6")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/Bike/blend_position = Vector2(-0.00172412, 0.00956511)
-parameters/Idle/blend_position = Vector2(0.113793, -0.302899)
+parameters/Bike/blend_position = Vector2(-0.796665, -0.128251)
+parameters/Idle/blend_position = Vector2(0.0134201, 0.754709)
 
 [node name="HurtBox" parent="." instance=ExtResource("3_ew0ey")]
 
