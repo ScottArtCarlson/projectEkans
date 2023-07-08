@@ -28,7 +28,6 @@ func _ready():
 func _physics_process(delta):
 
 	if target != null:
-		print(velocity)
 		var currenctVelocity = velocity.normalized()
 		var vectorToTarget: Vector2 = position.direction_to(target.position).normalized()
 

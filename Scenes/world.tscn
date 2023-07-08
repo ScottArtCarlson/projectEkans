@@ -1,10 +1,11 @@
-[gd_scene load_steps=9 format=3 uid="uid://buvirnbmvpjmq"]
+[gd_scene load_steps=10 format=3 uid="uid://buvirnbmvpjmq"]
 
 [ext_resource type="PackedScene" uid="uid://bycq58j37i46q" path="res://Scenes/player.tscn" id="1_pdc8r"]
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_pepnt"]
 [ext_resource type="PackedScene" uid="uid://cexq5kww3hohm" path="res://Scenes/snake.tscn" id="2_1pave"]
 [ext_resource type="PackedScene" uid="uid://crawbr77u2yx0" path="res://Scenes/snake_segment.tscn" id="4_iyujy"]
-[ext_resource type="PackedScene" uid="uid://cy2eyhxfkjif7" path="res://Scenes/level_completed.tscn" id="5_qe0tg"]
+[ext_resource type="PackedScene" path="res://Scenes/level_completed.tscn" id="5_qe0tg"]
+[ext_resource type="Texture2D" uid="uid://co72sckos8b5y" path="res://Scenes/bigForest.png" id="6_digkb"]
 
 [sub_resource type="Animation" id="Animation_yj4fx"]
 resource_name = "Count Down"
@@ -112,6 +113,16 @@ grow_vertical = 2
 unique_name_in_owner = true
 layout_mode = 2
 text = "Start in: 3"
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="CanvasLayer"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+texture_repeat = 3
+motion_mirroring = Vector2(1540, 1220)
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayer"]
+texture = ExtResource("6_digkb")
+centered = false
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 process_mode = 3
