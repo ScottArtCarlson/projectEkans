@@ -9,7 +9,7 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 # Snake speed
-@export var SPEED = 140.0
+@export var SPEED = 141.0
 # unused currently
 @export var startingNodes = 3
 # starting direction for animation
@@ -21,13 +21,24 @@ var angle = 0.0
 var angular_speed = 0.0
 
 func _ready():
+	velocity = Vector2(-100, -100)
 	update_animation_parameters(starting_position)
 	state_machine.travel("Drive_Head")
 
 func _physics_process(delta):
 
 	if target != null:
-		velocity = position.direction_to(target.position) * SPEED
+		print(velocity)
+		var currenctVelocity = velocity.normalized()
+		var vectorToTarget: Vector2 = position.direction_to(target.position).normalized()
+
+		var newVelocity: Vector2 = currenctVelocity.lerp(vectorToTarget, 0.025)
+
+		var finalVelocity = newVelocity * SPEED
+		
+
+		velocity = finalVelocity
+		
 		move_and_slide()
 
 		update_animation_parameters(velocity)	

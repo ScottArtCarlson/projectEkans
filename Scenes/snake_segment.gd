@@ -45,10 +45,19 @@ func _physics_process(_delta):
 		var to_target = global_position.distance_to(target_global_position)
 		# if target is to close, stop moving
 		if to_target < followOffset:
-			return	
+			return
 
 		# else, move towards target at speed
-		velocity = position.direction_to(target.global_position) * SPEED
+		
+		#else, move towards target at speed
+		var currenctVelocity = velocity.normalized()
+		var vectorToTarget: Vector2 = position.direction_to(target.global_position).normalized()
+
+		var newVelocity: Vector2 = currenctVelocity.lerp(vectorToTarget, 0.25)
+
+		var finalVelocity = newVelocity * SPEED
+		velocity = finalVelocity
+
 		move_and_slide()
 		# by sending it the velocity, it tells the animation blend space which animation direction to pull
 		update_animation_parameters(velocity)
@@ -60,8 +69,6 @@ func _physics_process(_delta):
 func update_animation_parameters(move_input : Vector2):
 	if (move_input != Vector2.ZERO):
 		animation_tree.set("parameters/Drive/blend_position", move_input)
-	else:
-		animation_tree.stop()
 
 # checks to see if the snake hit itself, working but needs win condition code
 func _on_snake_hurt_box_area_entered(area):
