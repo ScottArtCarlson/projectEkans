@@ -125,12 +125,16 @@ motion_mirroring = Vector2(2000, 2000)
 texture = ExtResource("6_6aap7")
 centered = false
 
-[node name="ParallaxLayerClouds" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
+[node name="ParallaxForeground" type="ParallaxBackground" parent="CanvasLayer"]
+layer = 100
+scroll_base_scale = Vector2(2, 2)
+
+[node name="ParallaxLayerClouds" type="ParallaxLayer" parent="CanvasLayer/ParallaxForeground"]
 texture_repeat = 3
-motion_scale = Vector2(1.5, 1.5)
+motion_scale = Vector2(0.5, 0.5)
 motion_mirroring = Vector2(2000, 2000)
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayerClouds"]
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxForeground/ParallaxLayerClouds"]
 texture = ExtResource("7_g61yn")
 centered = false
 
