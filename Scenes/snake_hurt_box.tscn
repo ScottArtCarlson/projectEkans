@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://bl2xp4w24uowp"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_vnt8w"]
+radius = 22.0
+height = 58.0
+
+[node name="Snake_Hurt_Box" type="Area2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_vnt8w")
