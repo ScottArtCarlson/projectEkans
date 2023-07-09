@@ -5,6 +5,8 @@ extends Node2D
 @onready var start_in = %StartIn
 @onready var start_in_label = %StartInLabel
 @onready var animation_player = $AnimationPlayer
+@onready var snake_container = $SnakeContainer
+@onready var score_label = %ScoreLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -39,3 +41,7 @@ func _on_player_player_killed():
 	# adds the new segment to the tree via add_child
 	tempLocation.add_child(temp)
 #	print("new segment")
+	updateScore()
+
+func updateScore():
+	score_label.text = str("Count: ", snake_container.get_child_count(false))

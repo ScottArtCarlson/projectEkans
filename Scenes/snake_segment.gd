@@ -34,6 +34,7 @@ func _ready():
 	update_animation_parameters(starting_position)
 	# snake body only has one state, drive, so we set it to that at the start
 	state_machine.travel("Drive")
+	print("index added: ", index)
 
 # physics process runs each frame, with delta being the time elapsed since the last frame
 func _physics_process(_delta):
@@ -72,5 +73,7 @@ func update_animation_parameters(move_input : Vector2):
 
 # checks to see if the snake hit itself, working but needs win condition code
 func _on_snake_hurt_box_area_entered(area):
-	Events.level_completed.emit()
+	pass
+	# hiding the win condition for now, doesnt work in a satisfying way
+#	Events.level_completed.emit()
 #	print("Hurt - self collision")
