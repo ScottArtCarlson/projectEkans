@@ -78,13 +78,13 @@ position = Vector2(-112, 208)
 [node name="SnakeContainer" type="Node" parent="."]
 
 [node name="Snake" parent="SnakeContainer" instance=ExtResource("2_1pave")]
-position = Vector2(320, 256)
+position = Vector2(3512, 2544)
 
 [node name="SnakeSegment" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(424, 296)
+position = Vector2(3616, 2584)
 
 [node name="SnakeSegment2" parent="SnakeContainer" instance=ExtResource("4_iyujy")]
-position = Vector2(520, 328)
+position = Vector2(3712, 2616)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
