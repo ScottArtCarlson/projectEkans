@@ -9,7 +9,6 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 # get the animation tree controler ready, this is the little crosshair on the animation blend space
 @onready var state_machine = animation_tree.get("parameters/playback")
-@onready var collisionLabel = get_tree().get_root().get_node("CollisionLabel")
 
 # Snake movement speed, as export so that is can be edited in the editor
 @export var SPEED = 350
