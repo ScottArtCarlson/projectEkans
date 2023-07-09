@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://bycq58j37i46q"]
+[gd_scene load_steps=32 format=3 uid="uid://bycq58j37i46q"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_c7bsl"]
 [ext_resource type="Texture2D" uid="uid://b44q7kglrhntv" path="res://Assets/BikeFourDirection.png" id="2_s5tde"]
@@ -199,6 +199,9 @@ animation = &"BIke_Right"
 [sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d7kxi"]
 animation = &"Bike_Up"
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_pur5h"]
+animation = &"Bike_Left"
+
 [sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_0t0p5"]
 blend_point_0/node = SubResource("AnimationNodeAnimation_7edaj")
 blend_point_0/pos = Vector2(-1, 0)
@@ -208,6 +211,8 @@ blend_point_2/node = SubResource("AnimationNodeAnimation_epy1l")
 blend_point_2/pos = Vector2(1, 0)
 blend_point_3/node = SubResource("AnimationNodeAnimation_d7kxi")
 blend_point_3/pos = Vector2(0, -1.1)
+blend_point_4/node = SubResource("AnimationNodeAnimation_pur5h")
+blend_point_4/pos = Vector2(-1, 0)
 min_space = Vector2(-1, -1.1)
 max_space = Vector2(1, 1.1)
 blend_mode = 1
@@ -276,7 +281,7 @@ libraries = {
 tree_root = SubResource("AnimationNodeStateMachine_lmrx6")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/Bike/blend_position = Vector2(-0.796665, -0.128251)
+parameters/Bike/blend_position = Vector2(-0.66241, -0.292756)
 parameters/Idle/blend_position = Vector2(0.0134201, 0.754709)
 
 [node name="HurtBox" parent="." instance=ExtResource("3_ew0ey")]

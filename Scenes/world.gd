@@ -7,12 +7,13 @@ extends Node2D
 @onready var animation_player = $AnimationPlayer
 @onready var snake_container = $SnakeContainer
 @onready var score_label = %ScoreLabel
+@onready var collision_label = %CollisionLabel
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	# using the new global Event script, connects the level_complete signal from snake segment to a function, show_level_complete
 	Events.level_completed.connect(show_level_completed)
-	
+	Events.collision_label.connect(show_snake_collision)
 	get_tree().paused = true
 	
 	animation_player.play("Count Down")
@@ -29,6 +30,12 @@ func show_level_completed():
 	# pauses the game
 	get_tree().paused = true
 
+func show_snake_collision():
+	
+	collision_label.visible = true
+	await get_tree().create_timer(2).timeout
+	collision_label.visible = false
+	
 # custom signal from the player scene
 func _on_player_player_killed():
 

@@ -9,6 +9,7 @@ extends CharacterBody2D
 @onready var animation_tree = $AnimationTree
 # get the animation tree controler ready, this is the little crosshair on the animation blend space
 @onready var state_machine = animation_tree.get("parameters/playback")
+@onready var collisionLabel = get_tree().get_root().get_node("CollisionLabel")
 
 # Snake movement speed, as export so that is can be edited in the editor
 @export var SPEED = 350
@@ -16,6 +17,8 @@ extends CharacterBody2D
 @export var followOffset = 90
 # starting direction for animation
 @export var starting_position : Vector2 = Vector2(0, 1)
+
+signal snakeCollision
 
 # counts the nuber of snake bits in the snake container
 var getChildCount = 0
@@ -75,6 +78,7 @@ func update_animation_parameters(move_input : Vector2):
 func _on_snake_hurt_box_area_entered(area):
 	# todo display the score and a win popup
 	print("Hit this segment")
+	popUpLabel()
 	delete_tail()
 	pass
 	# hiding the win condition for now, doesnt work in a satisfying way
@@ -85,3 +89,6 @@ func delete_tail():
 	if (nextSegment):
 		nextSegment.delete_tail()
 	queue_free()
+
+func popUpLabel():
+	Events.collision_label.emit()
