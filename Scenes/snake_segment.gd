@@ -73,7 +73,15 @@ func update_animation_parameters(move_input : Vector2):
 
 # checks to see if the snake hit itself, working but needs win condition code
 func _on_snake_hurt_box_area_entered(area):
+	# todo display the score and a win popup
+	print("Hit this segment")
+	delete_tail()
 	pass
 	# hiding the win condition for now, doesnt work in a satisfying way
 #	Events.level_completed.emit()
 #	print("Hurt - self collision")
+func delete_tail():
+	var nextSegment = get_parent().get_child(index+1)
+	if (nextSegment):
+		nextSegment.delete_tail()
+	queue_free()
