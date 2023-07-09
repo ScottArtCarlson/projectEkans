@@ -32,6 +32,7 @@ func show_level_completed():
 
 func show_snake_collision():
 	
+#	$SnakeBiteSound.play()
 	collision_label.visible = true
 	await get_tree().create_timer(2).timeout
 	collision_label.visible = false
