@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 # Snake movement speed, as export so that is can be edited in the editor
-@export var SPEED = 300
+@export var SPEED = 350
 # buffer between the snake bits so that they dint stack up, in pixels
 @export var followOffset = 90
 # starting direction for animation

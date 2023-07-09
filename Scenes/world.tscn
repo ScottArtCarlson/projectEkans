@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_pepnt"]
 [ext_resource type="PackedScene" uid="uid://cexq5kww3hohm" path="res://Scenes/snake.tscn" id="2_1pave"]
 [ext_resource type="PackedScene" uid="uid://crawbr77u2yx0" path="res://Scenes/snake_segment.tscn" id="4_iyujy"]
-[ext_resource type="PackedScene" uid="uid://cy2eyhxfkjif7" path="res://Scenes/level_completed.tscn" id="5_qe0tg"]
+[ext_resource type="PackedScene" uid="uid://bjkgbv8d1sddu" path="res://Scenes/level_completed.tscn" id="5_qe0tg"]
 [ext_resource type="Texture2D" uid="uid://c61pybpi1j12o" path="res://Assets/LargeBackground-Grassx2.png" id="6_6va5r"]
 [ext_resource type="Texture2D" uid="uid://dngtxx6scqt58" path="res://Assets/LargeBackground-Clouds.png" id="7_g61yn"]
 [ext_resource type="AudioStream" uid="uid://bu5dsl0ju3i0p" path="res://Assets/Etirwer (Looped).mp3" id="8_kovc6"]

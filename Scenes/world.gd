@@ -17,7 +17,7 @@ func _ready():
 	
 	animation_player.play("Count Down")
 	await animation_player.animation_finished
-	get_tree().paused = false	
+	get_tree().paused = false
 	
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -35,11 +35,11 @@ func _on_player_player_killed():
 	# Preps a new snake_segment
 	var newSegment = load("res://Scenes/snake_segment.tscn")
 	# instanciates it nad loads it into a temp var
-	var temp = newSegment.instantiate()
+	var segment = newSegment.instantiate()
 	# saves the snake container in a temp varaible
-	var tempLocation = $SnakeContainer
+	var snakeContainer = $SnakeContainer
 	# adds the new segment to the tree via add_child
-	tempLocation.add_child(temp)
+	snakeContainer.add_child(segment)
 #	print("new segment")
 	
 	$PlayerHitSound.play()
