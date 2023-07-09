@@ -38,4 +38,4 @@ func _on_player_player_killed():
 	var tempLocation = $SnakeContainer
 	# adds the new segment to the tree via add_child
 	tempLocation.add_child(temp)
-	print("new segment")
+#	print("new segment")
