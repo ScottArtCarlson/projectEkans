@@ -37,7 +37,7 @@ func _ready():
 	var startingX = targetPosition.x - (targetVelocity.x * SPEED)
 	var startingY = targetPosition.y - (targetVelocity.y * SPEED)
 	var newstartingPosition = Vector2(startingX, startingY)
-	print(targetPosition, targetVelocity, newstartingPosition)
+
 	velocity = targetVelocity
 	position = newstartingPosition
 

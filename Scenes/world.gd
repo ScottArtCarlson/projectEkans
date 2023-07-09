@@ -46,7 +46,7 @@ func _on_player_player_killed():
 	# saves the snake container in a temp varaible
 	var snakeContainer = $SnakeContainer
 	# adds the new segment to the tree via add_child
-	snakeContainer.add_child(segment)
+	snakeContainer.call_deferred("add_child", segment)
 #	print("new segment")
 	
 	$PlayerHitSound.play()

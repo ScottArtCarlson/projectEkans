@@ -88,8 +88,8 @@ func pick_new_state():
 		state_machine.stop()
 
 func _on_hurt_box_area_entered(area):
-	var randomX: int = randi_range(-3000, 3000)
-	var randomY: int = randi_range(-3000, 3000)
+	var randomX: int = randi_range(-2500, 2500)
+	var randomY: int = randi_range(-2500, 2500)
 	global_position = Vector2(randomX, randomY)
 
 	if i_frame > 0:
