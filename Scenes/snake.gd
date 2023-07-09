@@ -55,4 +55,5 @@ func update_animation_parameters(move_input : Vector2):
 		animation_tree.set("parameters/Drive_Head/blend_position", move_input)
 
 func _on_snake_hurt_box_area_entered(area):
+	$SnakeBiteSelfAudio.play()
 	print("Hurt - self collision")

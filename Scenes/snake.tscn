@@ -1,10 +1,11 @@
-[gd_scene load_steps=23 format=3 uid="uid://cexq5kww3hohm"]
+[gd_scene load_steps=24 format=3 uid="uid://cexq5kww3hohm"]
 
 [ext_resource type="Texture2D" uid="uid://dal864p3w0f2q" path="res://Assets/CarFourDirections.png" id="1_30yba"]
 [ext_resource type="Script" path="res://Scenes/snake.gd" id="1_dk2jw"]
 [ext_resource type="PackedScene" uid="uid://drx3ex4we5lir" path="res://Scenes/hit_box.tscn" id="3_vqelw"]
 [ext_resource type="PackedScene" uid="uid://bl2xp4w24uowp" path="res://Scenes/snake_hurt_box.tscn" id="4_rl6nr"]
 [ext_resource type="AudioStream" uid="uid://et1k228t8hlf" path="res://Assets/Parasite (looped).ogg" id="5_pd6bg"]
+[ext_resource type="AudioStream" uid="uid://dx2galq1venfd" path="res://Assets/crash-1-154890.mp3" id="6_m7fkm"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_h2nt7"]
 radius = 24.0
@@ -226,5 +227,8 @@ stream = ExtResource("5_pd6bg")
 autoplay = true
 max_distance = 1000.0
 attenuation = 3.13834
+
+[node name="SnakeBiteSelfAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_m7fkm")
 
 [connection signal="area_entered" from="Snake_Hurt_Box" to="." method="_on_snake_hurt_box_area_entered"]
