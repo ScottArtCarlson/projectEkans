@@ -1,8 +1,9 @@
-[gd_scene load_steps=30 format=3 uid="uid://bycq58j37i46q"]
+[gd_scene load_steps=31 format=3 uid="uid://bycq58j37i46q"]
 
 [ext_resource type="Script" path="res://Scenes/player.gd" id="1_c7bsl"]
 [ext_resource type="Texture2D" uid="uid://b44q7kglrhntv" path="res://Assets/BikeFourDirection.png" id="2_s5tde"]
 [ext_resource type="PackedScene" uid="uid://cni11px0hor1d" path="res://Scenes/hurt_box.tscn" id="3_ew0ey"]
+[ext_resource type="AudioStream" uid="uid://cq6l62rb7k5s7" path="res://Assets/bike-bell-37986.mp3" id="4_ywn4i"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7m5pq"]
 radius = 6.0
@@ -284,5 +285,8 @@ parameters/Idle/blend_position = Vector2(0.0134201, 0.754709)
 zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
+
+[node name="BellAudioPlayer" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ywn4i")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

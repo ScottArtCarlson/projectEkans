@@ -7,8 +7,11 @@ func _ready():
 	start_button.grab_focus()
 
 func _on_start_button_pressed():
+	$ButtonsAudioStreamPlayer.play()
 	get_tree().change_scene_to_file("res://Scenes/world.tscn")
+	
 
 func _on_quit_button_pressed():
+	$ButtonsAudioStreamPlayer.play()
 	get_tree().quit()
-
+	

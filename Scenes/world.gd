@@ -41,6 +41,9 @@ func _on_player_player_killed():
 	# adds the new segment to the tree via add_child
 	tempLocation.add_child(temp)
 #	print("new segment")
+	
+	$PlayerHitSound.play()
+	
 	updateScore()
 
 func updateScore():

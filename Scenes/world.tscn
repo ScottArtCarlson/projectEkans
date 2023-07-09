@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://buvirnbmvpjmq"]
+[gd_scene load_steps=13 format=3 uid="uid://buvirnbmvpjmq"]
 
 [ext_resource type="PackedScene" uid="uid://bycq58j37i46q" path="res://Scenes/player.tscn" id="1_pdc8r"]
 [ext_resource type="Script" path="res://Scenes/world.gd" id="1_pepnt"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bbdojwwhcwb1t" path="res://Assets/LargeBackground-Grass.png" id="6_6aap7"]
 [ext_resource type="Texture2D" uid="uid://dngtxx6scqt58" path="res://Assets/LargeBackground-Clouds.png" id="7_g61yn"]
 [ext_resource type="AudioStream" uid="uid://bu5dsl0ju3i0p" path="res://Assets/Etirwer (Looped).mp3" id="8_kovc6"]
+[ext_resource type="AudioStream" uid="uid://7wv1cp68et5y" path="res://Assets/impactBell_heavy_002.ogg" id="9_txn1h"]
 
 [sub_resource type="Animation" id="Animation_yj4fx"]
 resource_name = "Count Down"
@@ -74,7 +75,7 @@ _data = {
 script = ExtResource("1_pepnt")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_pdc8r")]
-position = Vector2(-112, 208)
+position = Vector2(568, 296)
 
 [node name="SnakeContainer" type="Node" parent="."]
 
@@ -158,5 +159,8 @@ libraries = {
 stream = ExtResource("8_kovc6")
 volume_db = -20.0
 autoplay = true
+
+[node name="PlayerHitSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_txn1h")
 
 [connection signal="player_killed" from="Player" to="." method="_on_player_player_killed"]

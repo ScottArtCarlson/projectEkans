@@ -57,6 +57,7 @@ func _physics_process(_delta):
 
 # no use yet
 func handleAction():
+	$BellAudioPlayer.play()
 	print("action pressed")
 	
 # wraps player back to opposite side
@@ -87,6 +88,7 @@ func pick_new_state():
 		state_machine.stop()
 
 func _on_hurt_box_area_entered(area):
+	
 	global_position = starting_position
 	if i_frame > 0:
 		return
