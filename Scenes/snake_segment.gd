@@ -11,7 +11,7 @@ extends CharacterBody2D
 @onready var state_machine = animation_tree.get("parameters/playback")
 
 # Snake movement speed, as export so that is can be edited in the editor
-@export var SPEED = 350
+@export var SPEED = 350.0
 # buffer between the snake bits so that they dint stack up, in pixels
 @export var followOffset = 90
 # starting direction for animation
@@ -31,9 +31,18 @@ func _ready():
 		pass
 	else:
 		getChildCount = get_parent().get_child_count()
-	
+
+	var targetVelocity = target.velocity.normalized()
+	var targetPosition = target.global_position
+	var startingX = targetPosition.x - (targetVelocity.x * SPEED)
+	var startingY = targetPosition.y - (targetVelocity.y * SPEED)
+	var newstartingPosition = Vector2(startingX, startingY)
+	print(targetPosition, targetVelocity, newstartingPosition)
+	velocity = targetVelocity
+	position = newstartingPosition
+
 	# gets the snimation state machine started
-	update_animation_parameters(starting_position)
+	update_animation_parameters(newstartingPosition)
 	# snake body only has one state, drive, so we set it to that at the start
 	state_machine.travel("Drive")
 	print("index added: ", index)
@@ -76,8 +85,16 @@ func update_animation_parameters(move_input : Vector2):
 # checks to see if the snake hit itself, working but needs win condition code
 func _on_snake_hurt_box_area_entered(area):
 	# todo display the score and a win popup
-	print("Hit this segment")
+
+
+	var positionDelta = global_position.distance_to(target.global_position)
+	print(positionDelta)
+	if (positionDelta > 300):
+		return
+	print("Hit this segment", index)
+
 	popUpLabel()
+
 	delete_tail()
 	pass
 	# hiding the win condition for now, doesnt work in a satisfying way
