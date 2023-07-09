@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bu5dsl0ju3i0p"
+path="res://.godot/imported/Etirwer (Looped).mp3-2b52f731dbefb073fa30c0c8b13bc064.mp3str"
+
+[deps]
+
+source_file="res://Assets/Etirwer (Looped).mp3"
+dest_files=["res://.godot/imported/Etirwer (Looped).mp3-2b52f731dbefb073fa30c0c8b13bc064.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
