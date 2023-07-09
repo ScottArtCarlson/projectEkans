@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://cexq5kww3hohm" path="res://Scenes/snake.tscn" id="2_1pave"]
 [ext_resource type="PackedScene" uid="uid://crawbr77u2yx0" path="res://Scenes/snake_segment.tscn" id="4_iyujy"]
 [ext_resource type="PackedScene" uid="uid://cy2eyhxfkjif7" path="res://Scenes/level_completed.tscn" id="5_qe0tg"]
-[ext_resource type="Texture2D" uid="uid://bbdojwwhcwb1t" path="res://Assets/LargeBackground-Grass.png" id="6_6aap7"]
+[ext_resource type="Texture2D" uid="uid://c61pybpi1j12o" path="res://Assets/LargeBackground-Grassx2.png" id="6_6va5r"]
 [ext_resource type="Texture2D" uid="uid://dngtxx6scqt58" path="res://Assets/LargeBackground-Clouds.png" id="7_g61yn"]
 [ext_resource type="AudioStream" uid="uid://bu5dsl0ju3i0p" path="res://Assets/Etirwer (Looped).mp3" id="8_kovc6"]
 [ext_resource type="AudioStream" uid="uid://7wv1cp68et5y" path="res://Assets/impactBell_heavy_002.ogg" id="9_txn1h"]
@@ -75,7 +75,6 @@ _data = {
 script = ExtResource("1_pepnt")
 
 [node name="Player" parent="." groups=["Player"] instance=ExtResource("1_pdc8r")]
-position = Vector2(568, 296)
 
 [node name="SnakeContainer" type="Node" parent="."]
 
@@ -121,10 +120,10 @@ text = "Start in: 3"
 
 [node name="ParallaxLayerGrass" type="ParallaxLayer" parent="CanvasLayer/ParallaxBackground"]
 texture_repeat = 3
-motion_mirroring = Vector2(2000, 2000)
+motion_mirroring = Vector2(4000, 4000)
 
 [node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ParallaxBackground/ParallaxLayerGrass"]
-texture = ExtResource("6_6aap7")
+texture = ExtResource("6_6va5r")
 centered = false
 
 [node name="ParallaxForeground" type="ParallaxBackground" parent="CanvasLayer"]
