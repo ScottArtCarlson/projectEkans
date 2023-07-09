@@ -17,6 +17,7 @@ signal player_killed
 @export var SPEED = 150.0
 # starting position 
 @export var starting_position : Vector2 = Vector2(0, 1)
+# i_frame makes the layer imprtal for 200 frames after a hit so that they can get away from the segment spawn
 var i_frame = 200
 
 func _ready():
@@ -46,6 +47,7 @@ func handleInput():
 # main physics loop, handles input, movement, and wrapping. delta is underscored if it is not used, oterwise an error is thrown
 func _physics_process(_delta):
 	handleInput()
+	velocity = velocity.normalized() * SPEED
 	move_and_slide()
 	# checks each frame if it needs to change to the next animation
 	pick_new_state()
